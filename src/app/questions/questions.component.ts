@@ -38,7 +38,7 @@ export class QuestionsComponent implements OnInit {
     console.log(this.saySomething(''));
   }
 
-  public saySomething(s: any): any {
+  public saySomething(s: string | null): string | null {
     if (s !== null && s.length >= 1) {
       // check if all letters are uppercased.
       if (s === s.toUpperCase() && !this.constainsNumbers.test(s)) {
