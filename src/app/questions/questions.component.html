@@ -1,1 +1,36 @@
-<p>questions works!</p>
+<div class="questions-container">
+  <ul class="questions-container_questions">
+    <li *ngFor="let item of questions">
+      <span>{{item.question}}</span>
+      <span *ngIf="item.question === null"
+      >{{item.question}} null</span>
+      <span *ngIf="item.question === ''"
+      >{{item.question}} Empty String: ''</span>
+      <hr>
+      <ng-container *ngFor="let info of answers">
+        <span
+          *ngIf="item.id === 1 && info.id === 1 ? saySomething('LETS HAVE A CHAT!') : null"
+        >{{info.answer}}</span>
+        <span
+          *ngIf="item.id === 2 && info.id === 4 ? saySomething('Got it!') : null"
+        >{{info.answer}}</span>
+        <span
+          *ngIf="item.id === 3 && info.id === 3 ? saySomething('I do not understand.') : null"
+        >{{info.answer}}</span>
+        <span
+          *ngIf="item.id === 4 && info.id === 2 ? saySomething('Yes!') : null"
+        >{{info.answer}}</span>
+        <span
+          *ngIf="item.id === 5 && info.id === 3 ? saySomething('I do not understand.') : null"
+        >{{info.answer}}</span>
+        <span
+          *ngIf="item.id === 6 && info.id === 5 ? saySomething('Say Something') : null"
+        >{{info.answer}}</span>
+        <span
+          *ngIf="item.id === 7 && info.id === 5 ? saySomething('Say Something') : null"
+        >{{info.answer}}</span>
+      </ng-container>
+
+    </li>
+  </ul>
+</div>

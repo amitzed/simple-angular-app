@@ -1,0 +1,17 @@
+.questions-container {
+  &_questions {
+    li {
+      margin: 2em 0;
+      list-style-type: none;
+      cursor: pointer;
+      color: #000;
+      background: #fff;
+      transition: all 0.5s linear;
+
+      &:hover {
+        color: dodgerblue;
+        font-weight: bold;
+      }
+    }
+  }
+}
