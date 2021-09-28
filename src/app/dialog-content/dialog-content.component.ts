@@ -20,7 +20,7 @@ export class DialogContentComponent implements OnInit {
   constructor(
     private questionService: QuestionService,
     private answerService: AnswerService,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: string
   ) { }
 
   ngOnInit(): void {
