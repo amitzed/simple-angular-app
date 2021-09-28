@@ -1,8 +1,28 @@
 .questions-container {
   text-align: center;
+
+  &_rules-wrapper {
+    border: 1px solid dodgerblue;
+    width: fit-content;
+    padding: 0.5em;
+    margin: auto;
+    border-radius: 8px;
+
+    h3 {
+      margin-bottom: 0.25em;
+    }
+
+    span {
+      display: block;
+      margin: 0.25em;
+    }
+  }
+
   &_questions {
+    padding-left: 0;
+
     li {
-      margin: 2em 0;
+      margin: 2em auto;
       list-style-type: none;
       cursor: pointer;
       color: #000;
