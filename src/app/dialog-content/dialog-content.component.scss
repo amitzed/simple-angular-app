@@ -1,0 +1,35 @@
+.dialog-container {
+  h2 {
+    text-align: center;
+  }
+
+  ul {
+    font-size: 1.5em;
+    color: dodgerblue;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: inline-block;
+  }
+
+  .mat-dialog-actions {
+    justify-content: center;
+  }
+
+  .mat-button {
+    background: dodgerblue;
+    color: #fff;
+    transition: all 0.5s linear;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

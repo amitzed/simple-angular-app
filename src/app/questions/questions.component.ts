@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 
+import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 import { IQuestions } from '../interfaces/questions-interface';
 import { QuestionService } from '../question.service';
 import { IAnswers } from '../interfaces/answers-interface';
@@ -20,7 +22,8 @@ export class QuestionsComponent implements OnInit {
 
   constructor(
     private questionService: QuestionService,
-    private answerService: AnswerService
+    private answerService: AnswerService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -56,7 +59,7 @@ export class QuestionsComponent implements OnInit {
       if (this.regex.test(s) || this.constainsNumbers.test(s)) {
         this.meetsCriteria = false;
 
-        return `${s} -- I do not understand.`;
+        return `${s} -- I don't understand.`;
       }
 
       // if the string is not ALL CAPS, NOT EMPTY, and contains ONLY LETTERS
@@ -68,7 +71,7 @@ export class QuestionsComponent implements OnInit {
       return `${s} -- Got it!`;
     }
 
-    return `${s} Empty String -- Say Something`;
+    return `Empty String || null -- Say Something ${s}`;
   }
 
   public getQuestions(): void {
@@ -79,6 +82,13 @@ export class QuestionsComponent implements OnInit {
   public getAnswers(): void {
     this.answerService.getAnswers()
                       .subscribe(answers => this.answers = answers)
+  }
+
+  public openDialog(action: string) {
+    const dialogRef = this.dialog.open(DialogContentComponent, {
+      restoreFocus: false,
+      data: action
+    });
   }
 
 }
