@@ -16,7 +16,7 @@ export class QuestionsComponent implements OnInit {
   public questions: IQuestions[] = [];
   public answers: IAnswers[] = [];
   private regex = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|<>\/~]/;
-  private constainsNumbers = /\d/;
+  private containsNumbers = /\d/;
   public meetsCriteria: boolean = false;
   private questionMark: string = '?';
 
@@ -44,7 +44,7 @@ export class QuestionsComponent implements OnInit {
   public saySomething(s: string | null): string | null {
     if (s !== null && s.length >= 1) {
       // check if all letters are uppercased.
-      if (s === s.toUpperCase() && !this.constainsNumbers.test(s)) {
+      if (s === s.toUpperCase() && !this.containsNumbers.test(s)) {
         this.meetsCriteria = false;
 
         return `${s} -- Stop Shouting!`;
@@ -56,7 +56,7 @@ export class QuestionsComponent implements OnInit {
         return `${s} -- Yes!`;
       }
       // check if special characters (excluding  '.' and '?') or numbers present.
-      if (this.regex.test(s) || this.constainsNumbers.test(s)) {
+      if (this.regex.test(s) || this.containsNumbers.test(s)) {
         this.meetsCriteria = false;
 
         return `${s} -- I don't understand.`;
