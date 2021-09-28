@@ -1,4 +1,5 @@
 .questions-container {
+  text-align: center;
   &_questions {
     li {
       margin: 2em 0;
@@ -13,6 +14,10 @@
         font-weight: bold;
       }
     }
+  }
+
+  hr {
+    width: 10%;
   }
 
   button {
