@@ -27,7 +27,6 @@ export class DialogContentComponent implements OnInit {
     this.getQuestions();
     this.getAnswers();
     this.action = this.data;
-    console.log(this)
   }
 
   public getQuestions(): void {
