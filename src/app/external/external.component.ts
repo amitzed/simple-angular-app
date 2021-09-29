@@ -18,15 +18,25 @@ export class ExternalComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBreweries();
+    this.getJsonPlace();
+    this.getUsingOF();
   }
 
-  public getBreweries(): void {
+  private getBreweries(): void {
     this.externalService.getBreweries()
                         .subscribe(<T>(res: T) => {
                           this.breweries = res,
                           console.log('BREWERIES:', res)
-                          console.log('this.brewery:', this.breweries)
                         })
+  }
+
+  private getJsonPlace(): void {
+    this.externalService.jsonPlace()
+                        .subscribe((res: void) => res)
+  }
+
+  private getUsingOF(): void {
+    this.externalService.usingOF();
   }
 
 }

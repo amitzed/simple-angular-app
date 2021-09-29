@@ -19,6 +19,26 @@ export class ExternalService {
     return this.http.get('https://api.openbrewerydb.org/breweries')
   }
 
+  public jsonPlace(): Observable<void> {
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
+                    .pipe(
+                      map((res: any) => console.log('jsonPlaceholder Response:', res)),
+                      // take(0),
+                      // take(1),
+                      // take(2),
+                      catchError(err => of(console.error(err)))
+                    )
+  }
+
+  public usingOF(): void {
+    of(10, 20, 'THIRTY')
+      .subscribe(
+        next => console.log('NEXT:', next),
+        err => console.log('ERROR:', err),
+        () => console.log('STOPPED')
+      )
+  }
+
   // public getBreweries(): Observable<void> {
   //   return this.http.get('https://api.openbrewerydb.org/breweries').pipe(
   //                   map((brewery: Breweries) => {
