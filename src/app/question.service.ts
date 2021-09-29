@@ -10,7 +10,9 @@ import { QUESTIONS } from './questions-db';
 })
 export class QuestionService {
 
-  constructor() { }
+  constructor(
+    http: HttpClient
+  ) { }
 
   public getQuestions(): Observable<IQuestions[]> {
     const questions = of(QUESTIONS);
