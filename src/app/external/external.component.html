@@ -1,1 +1,9 @@
-<p>external works!</p>
+<div class="brewery-container">
+  <h2>{{title}}</h2>
+  <div
+    *ngFor="let brew of breweries"
+    class="brewery-container_list"
+  >
+    {{brew.name}}
+  </div>
+</div>
