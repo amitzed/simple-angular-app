@@ -1,6 +1,11 @@
 .questions-container {
   text-align: center;
 
+  h2 {
+    text-align: center;
+    color: dodgerblue;
+  }
+
   &_rules-wrapper {
     border: 1px solid dodgerblue;
     width: fit-content;

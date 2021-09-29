@@ -23,12 +23,14 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ExternalComponent } from './external/external.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionsComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    ExternalComponent
   ],
   imports: [
     BrowserModule,
