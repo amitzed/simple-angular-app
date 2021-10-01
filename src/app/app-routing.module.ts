@@ -8,7 +8,12 @@ import { NotfoundComponent } from './notfound/notfound.component';
 const routes: Routes = [
   { path: '', redirectTo: '/responses', pathMatch: 'full' },
   { path: 'responses', component: QuestionsComponent },
-  { path: 'external-data', component: ExternalComponent },
+  // { path: 'external-data', component: ExternalComponent },
+  {
+    path: 'external-data',
+    component: ExternalComponent,
+    runGuardsAndResolvers: 'paramsChange'
+  },
   // {
   //   path: 'external-data',
   //   component: ExternalComponent,
