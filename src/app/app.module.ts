@@ -24,13 +24,15 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ExternalComponent } from './external/external.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionsComponent,
     DialogContentComponent,
-    ExternalComponent
+    ExternalComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
