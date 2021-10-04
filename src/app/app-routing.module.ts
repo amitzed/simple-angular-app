@@ -5,14 +5,22 @@ import { QuestionsComponent } from './questions/questions.component';
 import { ExternalComponent } from './external/external.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
   { path: '', redirectTo: '/responses', pathMatch: 'full' },
   { path: 'responses', component: QuestionsComponent },
   // { path: 'external-data', component: ExternalComponent },
+  // {
+  //   path: 'external-data',
+  //   component: ExternalComponent,
+  //   runGuardsAndResolvers: 'paramsChange'
+  // },
   {
     path: 'external-data',
     component: ExternalComponent,
-    runGuardsAndResolvers: 'paramsChange'
+    runGuardsAndResolvers: 'paramsChange',
+    canActivate: [AuthGuard]
   },
   // {
   //   path: 'external-data',
