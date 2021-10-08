@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map, take, catchError, filter, takeUntil } from 'rxjs/operators';
+import { map, take, catchError, filter, takeUntil, pluck } from 'rxjs/operators';
 
 import { Breweries } from './models/external-model';
 import { IBreweries } from './interfaces/external-interface';
@@ -15,8 +15,21 @@ export class ExternalService {
     private http: HttpClient
   ) { }
 
-  public getBreweries(): Observable<Object> {
-    return this.http.get('https://api.openbrewerydb.org/breweries')
+  // public getBreweries(): Observable<Object> {
+  //   return this.http.get('https://api.openbrewerydb.org/breweries')
+  // }
+  // public getBreweries() {
+  //   return this.http.get<IBreweries>('https://api.openbrewerydb.org/breweries')
+  // }
+  public getBreweries() {
+    return this.http.get<IBreweries>('https://api.openbrewerydb.org/breweries')
+                    .pipe(
+                      filter(x => x.name_brewery !== ''),
+                      catchError(err => of(
+                        console.error(err),
+                        console.error('Something Went Wrong')
+                        ))
+                    )
   }
 
   public jsonPlace(): Observable<void> {

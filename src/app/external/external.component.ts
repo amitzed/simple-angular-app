@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { filter } from 'rxjs/operators';
 
 import { ExternalService } from '../external.service';
 
@@ -22,9 +23,9 @@ export class ExternalComponent implements OnInit {
     this.getUsingOF();
   }
 
-  private getBreweries(): void {
+  private getBreweries() {
     this.externalService.getBreweries()
-                        .subscribe(<T>(res: T) => {
+                        .subscribe((res) => {
                           this.breweries = res,
                           console.log('BREWERIES:', res)
                         })

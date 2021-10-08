@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,9 @@ export class AuthService {
   // public token?: string | null;
   public token?: any;
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   public isLoggedIn() {
     // const token = localStorage.getItem('token');
@@ -35,4 +38,5 @@ export class AuthService {
 
     // return parsedPayload.exp > Date.now() / 1000;
   }
+
 }

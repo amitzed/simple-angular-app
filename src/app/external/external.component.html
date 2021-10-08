@@ -1,9 +1,13 @@
 <div class="brewery-container">
+
   <h2>{{title}}</h2>
   <div
     *ngFor="let brew of breweries"
     class="brewery-container_list"
   >
-    {{brew.name}}
+    <span>
+      {{brew.name}}
+    </span>
+    <input [(ngModel)]="brew.name" />
   </div>
 </div>
