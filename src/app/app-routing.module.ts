@@ -10,7 +10,7 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/responses', pathMatch: 'full' },
   { path: 'responses', component: QuestionsComponent },
-  { path: 'external-data', component: ExternalComponent },
+  // { path: 'external-data', component: ExternalComponent },
   {
     path: 'external-data',
     component: ExternalComponent,

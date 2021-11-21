@@ -25,6 +25,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ExternalComponent } from './external/external.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { ToggleThisComponent } from './toggle-this/toggle-this.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     QuestionsComponent,
     DialogContentComponent,
     ExternalComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ToggleThisComponent
   ],
   imports: [
     BrowserModule,

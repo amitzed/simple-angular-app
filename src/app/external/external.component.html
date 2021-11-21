@@ -1,11 +1,16 @@
 <div class="brewery-container">
 
+  <div>
+    <button (click)="aToggler()">Toggle Me</button>
+    <app-toggle-this [hidden]="toggler"></app-toggle-this>
+  </div>
+
   <h2>{{title}}</h2>
   <div
     *ngFor="let brew of breweries"
     class="brewery-container_list"
   >
-    <span>
+    <span [hidden]="toggler">
       {{brew.name}}
     </span>
     <input [(ngModel)]="brew.name" />

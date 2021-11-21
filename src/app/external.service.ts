@@ -65,4 +65,13 @@ export class ExternalService {
   //                   })
   //   )
   // }
+
+  // Example from ToH when using internal data
+  // public getHeroes(): Observable<IHero[]> {
+  //   const heroes = of(MOCK_HEROES);
+  //   this.messageService.addMessage('HeroService: fetched heroes');
+
+  //   return heroes;
+  // }
+
 }
